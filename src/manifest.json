@@ -1,0 +1,48 @@
+{
+	"name": "My Extension",
+	"version": "0.0.0",
+	"description": "for my use",
+	"homepage_url": "https://github.com/awesome-templates/browser-extension-template",
+	"manifest_version": 2,
+	"minimum_chrome_version": "74",
+	"icons": {
+		"128": "icon.png"
+	},
+	"browser_action": {
+		"default_title": "img"
+	},
+	"permissions": [
+		"storage",
+		"activeTab",
+		"tabs",
+		"activeTab",
+		"http://*/*",
+		"https://*/*",
+		"contextMenus",
+		"background",
+		"notifications",
+		"downloads"
+	],
+	"background": {
+		"persistent": false,
+		"scripts": [
+			"./scripts/background.js"
+		]
+	},
+	"content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
+	"content_scripts": [
+		{
+			"matches": [
+				"http://*/*",
+		"https://*/*"
+			],
+			"css": [
+				"./scripts/page.css"
+			],
+			"js": [
+				"./scripts/content.js"
+			],
+			"run_at": "document_end"
+		}
+	]
+}

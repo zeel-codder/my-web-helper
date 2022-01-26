@@ -1,0 +1,22 @@
+.im_dow svg{
+	color: black;
+    font-size: 24px;
+}
+
+.im_dow .stories_btn svg{
+	color: white;
+	z-index: 12222222;
+	pointer-events: auto;
+	font-size: 24px;
+    margin-bottom: 8px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.im_dow{
+	margin-top: 8px;
+    margin-left: 12px;
+    font-size: 29px;
+
+	cursor: pointer;
+}
