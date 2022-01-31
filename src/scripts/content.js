@@ -3,6 +3,8 @@
 
 console.log('start')
 
+let last_link='';
+
 
 
 function remove_p() {
@@ -25,7 +27,11 @@ function init() {
     const link = window.location.href;
 
    if (link.includes('https://leetcode.com/')) {
-    remove_p()
+
+   if(last_link!=link){
+       last_link=link;
+       remove_p()
+    }
 }
   
 
@@ -40,6 +46,7 @@ chrome.extension.onMessage.addListener(function (msg, sender, sendResponse) {
     }
 });
 
-
-init();
+setInterval(()=>{
+    init();
+},2000)
 
